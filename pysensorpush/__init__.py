@@ -162,8 +162,6 @@ class PySensorPush:
     @property
     def sensors(self):
         """Return all sensors registered with the SensorPush account."""
-        if self._all_sensors:
-            return self._all_sensors
 
         self._all_sensors = self.query(LIST_SENSORS_ENDPOINT)
         LOG.debug('Response sensors = %s', self._all_sensors)
@@ -172,8 +170,6 @@ class PySensorPush:
     @property
     def gateways(self):
         """Return all gateways registered with the SensorPush account."""
-        if self._all_gateways:
-            return self._all_gateways
 
         self._all_gateways = self.query(LIST_GATEWAYS_ENDPOINT)
         LOG.debug('Response gateways = %s', self._all_gateways)
